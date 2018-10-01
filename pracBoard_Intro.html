@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+<div class="col-lg-4">qwerty </div>
+<div class="col-lg-4">qwerty </div>
+<div class="col-lg-4">qwerty </div>
+  <div class="row">
+  <h1>h1 Bootstrap heading (36px)</h1>
+  <h2>h2 Bootstrap heading (30px)</h2>
+  <h3>h3 Bootstrap heading (24px)</h3>
+  <h4>h4 Bootstrap heading (18px)</h4>
+  <h5>h5 Bootstrap heading (14px)</h5>
+  <h6>h6 Bootstrap heading (12px)</h6>
+</div> 
+
+   <h1>Highlight Text</h1>    
+  <p>Use the mark element to <mark>highlight</mark> text.</p>
+  
+  <h1>Abbreviations</h1>
+  <p>The abbr element is used to mark up an abbreviation or acronym:</p>
+  <p>The <abbr title="World Health Organization">WHO</abbr> was founded in 1948.</p>
+  
+  <h1>Blockquotes</h1>
+  <p>The blockquote element is used to present content from another source:</p>
+  <blockquote>
+    <p>For 50 years, WWF has been protecting the future of nature. The world's leading conservation organization, WWF works in 100 countries and is supported by 1.2 million members in the United States and close to 5 million globally.</p>
+    <footer>From WWF's website</footer>
+  </blockquote> <br><br>
+  
+   <h1>Blockquotes</h1>
+  <p>To show the quote on the right use the class .blockquote-reverse:</p>
+  <blockquote class="blockquote-reverse">
+    <p>For 50 years, WWF has been protecting the future of nature. The world's leading conservation organization, WWF works in 100 countries and is supported by 1.2 million members in the United States and close to 5 million globally.</p>
+    <footer>From WWF's website</footer>
+  </blockquote>  <br><br><br>
+  
+  <h1>Description Lists</h1>    
+  <p>The dl element indicates a description list:</p>
+  <dl>
+    <dt>Coffee</dt>
+    <dd>- black hot drink</dd>
+    <dt>Milk</dt>
+    <dd>- white cold drink</dd>
+  </dl>    <br><br>
+
+  <h1> The code element defines a section in bootstrap</h1>
+  <p>  Right here there are 3 seperate sections  <code>s1</code> ,<code>s2</code> and <code>s3</code>  </p>  <br><br>
+  
+  <h1> The kbd box </h1>
+  <p>  The kbd box highlights a section say this  <kbd> dialogue</kbd> </p> <br><br>
+  
+  <h1> contexual colors and backgrounds </h1>
+  <p class="text-muted bg-primary">text-muted and bg-primary </p>
+  <p class="text-primary bg-success">text-primary and bg-success </p>
+  <p class="text-success bg-info">text-success and bg-info</p>
+  <p class="text-info bg-warning">text-info and bg-warning</p>
+  <p class="text-warning bg-danger">text-warning and bg-danger </p>
+  <p class="text-danger">text-danger </p>  <br><br>
+  <h1>some more text styles</h1>
+  <p class="lead">lead (stand out) </p>
+  <p class="small">lead (stand out) </p>
+  <p class="text-left">lead (stand out) </p>
+  <p class="text-center">lead (stand out) </p>
+  <p class="text-right">lead (stand out) </p>
+  <p class="text-justify">lead (stand out) </p>
+  <p class="text-nowrap">lead (stand out) </p>
+  <p class="text-lowercase">lead (stand out) </p>
+  <p class="text-uppercase">lead (stand out) </p>
+  <p class="text-capitalize">lead (stand out) </p>
+  <p class="text-initialism">lead (stand out) </p>  <br><br>
+  
+  <h1>List Item</h1>
+  <ul>
+  <li>list item 1 </li>
+  <li>list item 2</li>
+  </ul>  <br><br>
+  
+  <h1>List Item unstyled</h1>
+   <ul class="list-unstyled">
+  <li>list item 1 list-unstyled</li>
+  <li>list item 2 list-unstyled</li>
+  </ul>   <br><br>
+  
+  <h1>List Item inline</h1>
+   <ul class="list-inline">
+  <li>list item 1 list-inline</li>
+  <li>list item 2 list-inline</li>
+  </ul>   <br><br>
+  
+  <h1>description list normal</h1> 
+  <dl>
+  <dt>India</dt>
+  <dd>South Asian Country</dd>
+  <dt>USA</dt>
+  <dd>North American Country</dd>
+  </dl>  <br><br>
+  
+  <h1>description list horizontal</h1>
+   <dl class="dl-horizontal">
+  <dt>India</dt>
+  <dd>South Asian Country</dd>
+  <dt>USA</dt>
+  <dd>North American Country</dd>
+  </dl>    <br><br>
+  
+  <pre class="pre-scrollable" style="length:50px;width:100%;">
+  Scrollable pre element 
+  select "AGS"."CLMS_ERNG_YRFL"."ER_IDN" ID, 
+p.ps_nm Name,p. PS_BLDNG PAN,e.dmn_dscrptn,
+sum(nvl("AGS"."CLMS_ERNG_YRFL"."ER_BSC_PY",0)) Sum_Basic_pay, 
+sum(nvl("AGS"."CLMS_ERNG_YRFL"."ER_DPAY",0)) Sum_DPay, 
+sum(nvl("AGS"."CLMS_ERNG_YRFL"."ER_DA",0)) Sum_DA,
+sum(nvl("AGS"."CLMS_ERNG_YRFL"."ER_HRA",0)) Sum_HRA,
+sum(nvl("AGS"."CLMS_ERNG_YRFL"."ER_CCA",0)) Sum_CCA, 
+sum(nvl("AGS"."CLMS_ERNG_YRFL"."ER_CA",0)) Sum_CA, 
+sum(nvl("AGS"."CLMS_ERNG_YRFL"."ER_PPSP_TTL",0)) Sum_PPSP_TTL, 
+sum(nvl("AGS"."CLMS_ERNG_YRFL"."ER_GRSS",0)) Sum_Gross, 
+sum(nvl("AGS"."CLMS_ERNG_YRFL"."ER_GPF",0)) Sum_GPF, 
+sum(nvl("AGS"."CLMS_ERNG_YRFL"."ER_CGGIS",0)) Sum_CGGIS, 
+sum(nvl("AGS"."CLMS_ERNG_YRFL"."ER_CGHS",0)) SUM_CGHS, 
+sum(nvl("AGS"."CLMS_ERNG_YRFL"."ER_LCNC_FEE",0)) SUM_LCNC_FEE, 
+sum(nvl("AGS"."CLMS_ERNG_YRFL"."ER_PT",0)) SUM_ProffTax, 
+sum(nvl("AGS"."CLMS_ERNG_YRFL"."ER_LCNC_FEE_IN_OFFICE",0)) SUM_LCNC_Fee, 
+sum(nvl("AGS"."CLMS_ERNG_YRFL"."PS_DPAY",0)) Sum_Dpay,    
+sum(nvl("AGS"."CLMS_ERNG_YRFL"."TIER1",0)) Sum_Tier1, 
+sum(nvl("AGS"."CLMS_ERNG_YRFL"."TIERII",0)) Sum_tierII, 
+sum(nvl("AGS"."CLMS_ERNG_YRFL"."ER_IT",0)) Sum_IT, 
+sum(nvl("AGS"."CLMS_ERNG_YRFL"."ER_IT_SRCHR",0)) Sum_srchr,
+  </pre>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+</body>
+</html>
+</html>
