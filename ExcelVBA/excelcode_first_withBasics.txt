@@ -1,0 +1,61 @@
+
+
+Developer-------->  Insert ----------> Button
+Click on design mode
+Right click on button 
+view code
+write code 
+Click on design mode again 
+Press to execute
+
+
+
+
+
+
+
+
+
+
+
+Private Sub Checker_Click()
+Dim rng As Range
+Dim id As String
+Dim usedrows As Integer
+Dim usedcols As Integer
+Dim i As Integer
+Dim arr(0 To 5) As Long
+
+
+id = Cells(2, 5)
+If id = "" Then
+    id = "km"
+End If
+    
+usedrows = WorksheetFunction.CountA(Range("A:A"))
+Set rng = Sheets("Sheet1").Range("A1:A" & usedrows)
+
+
+usedcols = WorksheetFunction.CountA(Range("1:1"))
+For i = 1 To usedrows
+    Cells(i, 3).Value = ""
+    Cells(i, 3).Interior.Color = RGB(255, 255, 255)
+    Next i
+    
+
+MsgBox "There are " & usedrows & "rows in use"
+MsgBox "There are " & usedcols & "columns in use"
+
+    If Application.WorksheetFunction.CountIf(rng, id) > 0 Then
+        rownum = Application.WorksheetFunction.Match(id, rng, 0)
+        Cells(rownum, 3) = id & " is here"
+        Cells(rownum, 3).Interior.Color = RGB(255, 0, 0)
+        
+        
+
+        MsgBox "value found at rownumber:" & rownum
+
+    Else
+        MsgBox "No cell with such value"
+    End If
+End Sub
