@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="eng">
+<head>
+<meta charset="utf-8">
+<script>
+  function searchfor6(elems,ind)
+    {
+	for(i=ind+1;i<elems.length;i++)
+	   if(elems[i]==6)
+	     return true;
+	return false;
+	}
+  function operate(elems,tar,ind)
+    {
+  if(elems[ind]==tar)
+      {
+       if(!(searchfor6(elems,ind)))
+	     return true;
+		 
+	  }
+  
+  if((ind==(elems.length-1))&&(elems[ind]!=tar)) return false;  
+  
+  if (elems[ind]!=6)
+  return (operate(elems,tar-elems[ind],ind+1) ||operate(elems,tar,ind+1));
+  return(operate(elems,tar-elems[ind],ind+1));
+  
+      
+	}
+	
+  function startt()
+  {
+  var t=document.getElementById("tar").value;
+  t=parseInt(t);
+  li=document.getElementById("ns").value;
+  elems=new Array();
+  var i=0;
+  
+  for(j in li)
+	{
+		if (!(li[j]==","))
+		{
+		elems[i]=parseInt(li[j]);
+		i+=1;
+		}
+	}
+	if(operate(elems,t,0))
+	   document.getElementById("result1").value="possible";
+	else 
+	   document.getElementById("result1").value="not possible";
+	//console.log(elems);
+  }
+</script>
+
+</head>
+ 
+<body>
+ <fieldset>
+ <legend style="font-weight:900;"> Whether the target can be obtained by summing up the list of values with all 6's included  </legend>
+ <pre>
+ Target:<input id="tar" size="5">  <br>
+ List of values:<input id="ns" size="50">
+ <button onclick="startt()">start</button>
+ Whether possible:<input id="result1">
+ </pre>
+ </fieldset>
+</body>
+</html>

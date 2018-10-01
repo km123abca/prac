@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="eng">
+<head>
+<meta charset="utf-8">
+<script>
+lim=1;
+var canIdisplay=true;
+  function helper(arr,ind,sum1,sum2,arr1f,arr2f)
+    {                                               //alert("entering with sum1="+sum1+" and sum2="+sum2); 
+													
+													
+  lim+=1;
+  if(lim>1000)
+     alert("STACK OVERFLOW");
+	 var arr1=new Array();
+	 var arr2=new Array();
+	 for(i in arr1f) arr1[i]=arr1f[i];
+	 for(i in arr2f) arr2[i]=arr2f[i];
+	 
+	
+	 
+  if(ind==(arr.length-1))
+     {
+	 if((sum1-sum2)==arr[ind])
+	    {
+		arr2.push(arr[ind]);
+		if(canIdisplay)
+		{ //console.log("sum1="+sum1);
+		  //console.log("sum2="+sum2);
+		   //console.log(arr2);
+		  //console.log(arr1);
+		  canIdisplay=false;		  
+		  
+		  document.getElementById("s1").value=arr1;
+		  document.getElementById("s2").value=arr2;
+		}
+													//alert("here at 23");
+		return true;
+		}
+	 else if((sum2-sum1)==arr[ind])
+	    {
+		arr1.push(arr[ind]);
+		if(canIdisplay)
+		{
+		//console.log("sum1="+sum1);
+		//console.log("sum2="+sum2);
+		//console.log(arr2);
+		//console.log(arr1);
+		canIdisplay=false;
+		
+		document.getElementById("s1").value=arr1;
+		  document.getElementById("s2").value=arr2;
+		}
+													//alert("here at 31");
+		return true;
+		}
+	 
+	  return false;
+	 }
+	 
+	 arr1.push(arr[ind]);                                    alert("array1:"+arr1);alert("array2:"+arr2);
+	 v1=helper(arr,ind+1,sum1+arr[ind],sum2,arr1,arr2);      alert("v1="+v1);
+	 
+	 arr1.pop();
+	 arr2.push(arr[ind]);                                    alert("array1:"+arr1);alert("array2:"+arr2);
+	 v2=helper(arr,ind+1,sum1,sum2+arr[ind],arr1,arr2);
+	                                                         alert("v2="+v2);alert("v1+v2="+v1||v2);
+	 return (v1||v2);
+	}
+  
+  function startt()
+  {
+  canIdisplay=true;
+  arr=document.getElementById("ns").value;
+  arr=arr.split(",");
+  for(i in arr) arr[i]=parseInt(arr[i]);
+  arr1=new Array();//arr1[0]=0;
+  //arr1.push(arr[0]);
+  arr2=new Array();//arr2[0]=0;
+  //if(helper(arr,1,arr[0],0,arr1,arr2))
+  if(helper(arr,0,0,0,arr1,arr2))
+    document.getElementById("result1").value="possible";
+  else
+    document.getElementById("result1").value="not possible";
+   
+  
+  }
+</script>
+
+</head>
+ 
+<body>
+ <fieldset>
+ <legend style="font-weight:900;"> Whether the given array can be split into two equal sized arrays </legend>
+ <pre>
+ 
+ Comma seperated array:<input id="ns" size="50">
+ <button onclick="startt()">start</button>
+ Whether possible:<input id="result1"> <br>
+ SubArray1:<input id="s1" size="50"><br>
+ SubArray2:<input id="s2" size="50">
+ </pre>
+ </fieldset>
+</body>
+</html>

@@ -1,0 +1,97 @@
+
+
+<head>
+
+    <style>
+	body
+	  {
+	  background-image:url("im1.jpg");
+	  }
+	</style>
+
+	<script>
+	
+	
+	    function djkistra(mat)
+			{
+			for (var i=0;i<5;i++)
+				{
+				clearedList=new Array;
+				var small=0;
+				clearedList.push(0);
+				for (var j=0;j<5;j++)
+					{
+					var candidate=9999;
+					for (var z=0;z<5;z++)
+						{ if(i==z) continue;
+						if (mat[i][z]<candidate)
+							{
+							candidate=mat[i][z];
+							small=z;
+							}
+						}
+					clearedList.push(small);
+					
+					if clearedList.includes(j) continue;
+					if (mat[i][small]+mat[small] < mat [i][j] )
+					     {mat [i][j]=mat[i][small]+mat[small];
+						  mat [j][i]=mat [i][j];
+						 }
+					}
+				}
+			
+			
+			}
+			
+			
+		function startt()
+			{
+			   mat=new Array();
+			   var rowcnt=0;
+			for(var i=1;i<=21;i+=5)
+				{
+				var ch="elem";
+				elems=new Array();
+				for(var j=0;j<5;j++)
+					{
+					 ch+=String(j+i);
+					 elems[j]=document.getElementById(ch).value;
+					 ch="elem";
+					}
+				
+				mat[rowcnt]=elems;
+				rowcnt+=1;
+				}
+			mat=djkistra(mat);
+			
+			var ch="elem";
+			for (var i=0;i<5;i++)
+			  for(var j=0;j<5;j++)
+			     {
+				  ch+=String(i*5+j+1);
+				  document.getElementById(ch)=mat[i][j];
+				  ch="elem";
+				 }
+			}
+	
+	</script>
+
+</head>
+ 
+<body >
+ <fieldset>
+ <legend style="font-weight:900;background-color: coral;">Djikstra shortest path algorithm </legend>
+ <pre>
+ 
+ <input id="elem1" size="10"> <input id="elem2" size="10"> <input id="elem3" size="10"> <input id="elem4" size="10"> <input id="elem5" size="10">
+ <input id="elem6" size="10"> <input id="elem7" size="10"> <input id="elem8" size="10"> <input id="elem9" size="10"> <input id="elem10" size="10">
+ <input id="elem11" size="10"> <input id="elem12" size="10"> <input id="elem13" size="10"> <input id="elem14" size="10"> <input id="elem15" size="10">
+ <input id="elem16" size="10"> <input id="elem17" size="10"> <input id="elem18" size="10"> <input id="elem19" size="10"> <input id="elem20" size="10">
+ <input id="elem21" size="10"> <input id="elem22" size="10"> <input id="elem23" size="10"> <input id="elem24" size="10"> <input id="elem25" size="10">
+ 
+ <button onclick="startt()">start</button>
+ 
+ </pre>
+ </fieldset>
+</body>
+</html>

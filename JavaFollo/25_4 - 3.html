@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="eng">
+<head>
+<meta charset="utf-8">
+<script>
+var lim=0;
+  function searchform5(elems,ind)
+    {
+	for(i=ind+1;i<elems.length;i++)
+	   if((elems[i]%5)==0)
+	     {
+		  if(i==(elems.length-1))
+	     return true;
+		 if (elems[i+1]==1) return false;
+		 return true;
+		 }
+	return false;
+	}
+  function operate(elems,tar,ind)
+    {  //alert("entering function with tar="+tar+"and elems[ind]="+elems[ind]);
+  if((lim+=1)>1000) alert("overload!!!!");
+  if((ind==(elems.length-1))&&(elems[ind]!=tar)) return false; 
+  if(elems[ind]==tar)
+      {//console.log("entered 23 with ind="+tar);
+       if(!(searchform5(elems,ind)))
+	     return true;
+		 
+	  }
+  
+   
+  
+  if ((elems[ind]%5)!=0)
+  return (operate(elems,tar-elems[ind],ind+1) ||operate(elems,tar,ind+1));
+  else if (elems[ind+1]!=1)
+  return(operate(elems,tar-elems[ind],ind+1));
+  return(operate(elems,tar,ind+1));
+  
+  
+      
+	}
+	
+  function startt()
+  {
+  var t=document.getElementById("tar").value;
+  t=parseInt(t);
+  li=document.getElementById("ns").value;
+  elems=li.split(",")
+  for(j in elems)
+	{
+   elems[j]=parseInt(elems[j]);
+		
+	}
+	//console.log(elems);
+	if(operate(elems,t,0))
+	   document.getElementById("result1").value="possible";
+	else 
+	   document.getElementById("result1").value="not possible";
+	//console.log(elems);alert("ok?");
+  }
+</script>
+
+</head>
+ 
+<body>
+ <fieldset>
+ <legend style="font-weight:900;"> Whether the target can be obtained by summing up the list with all multiples of 5 included but not so if value immediatly following is 1 </legend>
+ <pre>
+ Target:<input id="tar" size="5">  <br>
+ List of values:<input id="ns" size="50">
+ <button onclick="startt()">start</button>
+ Whether possible:<input id="result1">
+ </pre>
+ </fieldset>
+</body>
+</html>
